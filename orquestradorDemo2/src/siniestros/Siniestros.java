@@ -17,6 +17,7 @@ public class Siniestros
 {	
     private String tipoVehiculo;
     private int usoVehiculo;
+    private String tipoSiniestro;
     private List<NumeroPlaca> numeroPlaca = new ArrayList<NumeroPlaca>();
     private List<NumeroSerie> numeroSerie = new ArrayList<NumeroSerie>();
     private List<RFCContratante> rfcContratante = new ArrayList<RFCContratante>();
@@ -42,7 +43,16 @@ public class Siniestros
         this.usoVehiculo = usoVehiculo;
     }
     
-    @XmlElement(name = "numeroPlaca")
+    @XmlElement
+    public String getTipoSiniestro() 
+    {
+		return tipoSiniestro;
+	}
+	public void setTipoSiniestro(String tipoSiniestro) 
+	{
+		this.tipoSiniestro = tipoSiniestro;
+	}
+	@XmlElement(name = "numeroPlaca")
     public List<NumeroPlaca> getNumeroPlaca()
     {
         return numeroPlaca;

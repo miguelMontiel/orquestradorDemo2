@@ -3,6 +3,8 @@
     
     <usoVehiculo>01</usoVehiculo>
     
+    <tipoSiniestro>robo</tipoSiniestro>
+    
     <numeroPlaca>
         <id_numeroPlaca>MVV-19-08</id_numeroPlaca>
         <eventos_numeroPlaca>

@@ -38,55 +38,109 @@ public class OrquestradorDemo2
             JAXBContext jaxbcontext = JAXBContext.newInstance(Siniestros.class);
             Unmarshaller unmarshaller = jaxbcontext.createUnmarshaller();
             Siniestros siniestros = (Siniestros) unmarshaller.unmarshal(file);
-
-            System.out.println(siniestros.getTipoVehiculo());
-            System.out.println(siniestros.getUsoVehiculo());
+            
+            Boolean h01 = false, h07 = false;
+            String[] claveUsoVehiculo = {"", "Particular", "Privado", "", "Transporte Público", "Renta Diaria", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "Chofer Privado"};
+            
+            if(siniestros.getTipoSiniestro().equals(""))
+            {
+                if(siniestros.getTipoVehiculo().equals("AUT")  || siniestros.getTipoVehiculo().equals("CA1"))
+                {
+                	if(siniestros.getUsoVehiculo() == 01 || siniestros.getUsoVehiculo() == 02 || siniestros.getUsoVehiculo() == 04 || siniestros.getUsoVehiculo() == 05 ||siniestros.getUsoVehiculo() == 23)
+                	{
+                		System.out.println("Entra a H01! \n");
+                        System.out.println("Tipo de Vehiculo: " + siniestros.getTipoVehiculo());
+                        System.out.println("Uso del Vehiculo: " + siniestros.getUsoVehiculo() + " - " + claveUsoVehiculo[siniestros.getUsoVehiculo()]);
+                		
+                		h01 = true;
+                	}
+                }
+            }
+            else if(siniestros.getTipoSiniestro().toLowerCase().equals("robo"))
+            {
+            	System.out.println("Entra a H07! \n");
+            	System.out.println("Tipo de Siniestro: " + siniestros.getTipoSiniestro());
+            	
+            	h07 = true;
+            }
             
             for(NumeroPlaca numeroplaca : siniestros.getNumeroPlaca())
             {
-                System.out.println("Numero de la placa: " + numeroplaca.getId_numeroPlaca());
-                
                 for(EventosnumeroPlaca eventosnumeroplaca : numeroplaca.getEventos_numeroPlaca())
                 {
-                    System.out.println("Regla: " + eventosnumeroplaca.getEventosReglasID_numeroPlaca());
-                    System.out.println("Numero de eventos: " + eventosnumeroplaca.getEventosReglasTotales_numeroPlaca());
-                    System.out.println("===============================");
+                	if(h01 && eventosnumeroplaca.getEventosReglasID_numeroPlaca().equals("H01") && eventosnumeroplaca.getEventosReglasTotales_numeroPlaca() > 4)
+                	{
+                		System.out.println("¡¡¡La placa '" + numeroplaca.getId_numeroPlaca() + "' tiene '" + eventosnumeroplaca.getEventosReglasTotales_numeroPlaca() + "' eventos en la regla '" + eventosnumeroplaca.getEventosReglasID_numeroPlaca() + "'!!!");
+                	}
+                	else if(h01 && eventosnumeroplaca.getEventosReglasID_numeroPlaca().equals("H01b") && eventosnumeroplaca.getEventosReglasTotales_numeroPlaca() > 4)
+                	{
+                		System.out.println("¡¡¡La placa '" + numeroplaca.getId_numeroPlaca() + "' tiene '" + eventosnumeroplaca.getEventosReglasTotales_numeroPlaca() + "' eventos en la regla '" + eventosnumeroplaca.getEventosReglasID_numeroPlaca() + "'!!!");
+                	}
+                	else if(h01 && eventosnumeroplaca.getEventosReglasID_numeroPlaca().equals("H01c") && eventosnumeroplaca.getEventosReglasTotales_numeroPlaca() > 5)
+                	{
+                		System.out.println("¡¡¡La placa '" + numeroplaca.getId_numeroPlaca() + "' tiene '" + eventosnumeroplaca.getEventosReglasTotales_numeroPlaca() + "' eventos en la regla '" + eventosnumeroplaca.getEventosReglasID_numeroPlaca() + "'!!!");
+                	}
+                	else if(h07 && eventosnumeroplaca.getEventosReglasID_numeroPlaca().equals("H07") && eventosnumeroplaca.getEventosReglasTotales_numeroPlaca() > 1)
+                	{
+                		System.out.println("¡¡¡La placa '" + numeroplaca.getId_numeroPlaca() + "' tiene '" + eventosnumeroplaca.getEventosReglasTotales_numeroPlaca() + "' eventos en la regla '" + eventosnumeroplaca.getEventosReglasID_numeroPlaca() + "'!!!");
+                	}
+                	else
+                	{
+                		System.out.println("Todo chido con el número de Placa.");
+                	}
                 }
             }
             
+            System.out.println();
+            
             for(NumeroSerie numeroserie : siniestros.getNumeroSerie())
-            {
-                System.out.println("Numero de serie: " + numeroserie.getId_numeroSerie());
-                
+            {                
                 for(EventosnumeroSerie eventosnumeroserie : numeroserie.getEventos_numeroSerie())
                 {
-                    System.out.println("Regla: " + eventosnumeroserie.getEventosReglasID_numeroSerie());
-                    System.out.println("Numero de eventos: " + eventosnumeroserie.getEventosReglasTotales_numeroSerie());
-                    System.out.println("===============================");
+                	if(h01 && eventosnumeroserie.getEventosReglasID_numeroSerie().equals("H01") && eventosnumeroserie.getEventosReglasTotales_numeroSerie() > 4)
+                	{
+                		System.out.println("¡¡¡El número de Serie '" + numeroserie.getId_numeroSerie() + "' tiene '" + eventosnumeroserie.getEventosReglasTotales_numeroSerie() + "' eventos en la regla '" + eventosnumeroserie.getEventosReglasID_numeroSerie() + "'!!!");
+                	}
+                	else if(h07 && eventosnumeroserie.getEventosReglasID_numeroSerie().equals("H07") && eventosnumeroserie.getEventosReglasTotales_numeroSerie() > 1)
+                	{
+                		System.out.println("¡¡¡El número de Serie '" + numeroserie.getId_numeroSerie() + "' tiene '" + eventosnumeroserie.getEventosReglasTotales_numeroSerie() + "' eventos en la regla '" + eventosnumeroserie.getEventosReglasID_numeroSerie() + "'!!!");
+                	}
+                	else
+                	{
+                		System.out.println("Todo chido con el número de Serie.");
+                	}
                 }
             }
             
             for(RFCContratante rfccontratante : siniestros.getRfcContratante())
             {
-                System.out.println("RFC del Contratante: " + rfccontratante.getId_rfcContratante());
-                
                 for(EventosrfcContratante eventosrfccontratante : rfccontratante.getEventosrfccontratente())
                 {
-                    System.out.println("Regla: " + eventosrfccontratante.getEventosReglasID_rfcContratante());
-                    System.out.println("Numero de eventos: " + eventosrfccontratante.getEventosReglasTotales_rfcContratante());
-                    System.out.println("===============================");
+                	if(h01 && eventosrfccontratante.getEventosReglasID_rfcContratante().equals("H01") && eventosrfccontratante.getEventosReglasTotales_rfcContratante() > 4)
+                	{
+                		System.out.println("¡¡¡El RFC del Contratante '" + rfccontratante.getId_rfcContratante() + "' tiene '" + eventosrfccontratante.getEventosReglasTotales_rfcContratante() + "' eventos en la regla '" + eventosrfccontratante.getEventosReglasID_rfcContratante() + "'!!!");
+                	}
+                	else if(h07) {}
+                	else
+                	{
+                		System.out.println("Todo chido con el RFC del Contratante.");
+                	}
                 }
             }
             
             for(RFCConductor rfcconductor : siniestros.getRfcConductor())
             {
-                System.out.println("RFC del Conductor: " + rfcconductor.getId_rfcConductor());
-                
                 for(EventosrfcConductor eventosrfcconductor : rfcconductor.getEventosrfcconductor())
                 {
-                    System.out.println("Regla: " + eventosrfcconductor.getEventosReglasID_rfcConductor());
-                    System.out.println("Numero de eventos: " + eventosrfcconductor.getEventosReglasTotales_rfcConductor());
-                    System.out.println("===============================");
+                	if(h01 && eventosrfcconductor.getEventosReglasID_rfcConductor().equals("H01") && eventosrfcconductor.getEventosReglasTotales_rfcConductor() > 4)
+                	{
+                		System.out.println("¡¡¡El RFC del Contratante '" + rfcconductor.getId_rfcConductor() + "' tiene '" + eventosrfcconductor.getEventosReglasTotales_rfcConductor() + "' eventos en la regla '" + eventosrfcconductor.getEventosReglasID_rfcConductor() + "'!!!");
+                	}
+                	else if(h07) { 	}
+                	else
+                	{
+                		System.out.println("Todo chido con el RFC del Conductor.");
+                	}
                 }
             }
         }
