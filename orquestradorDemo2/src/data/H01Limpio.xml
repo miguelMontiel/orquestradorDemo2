@@ -1,0 +1,89 @@
+<siniestro>
+    <tipoVehiculo>AUT</tipoVehiculo>
+    
+    <usoVehiculo>01</usoVehiculo>
+    
+    <tipoSiniestro>robo</tipoSiniestro>
+    
+    <numeroPlaca>
+        <id_numeroPlaca>MVV-19-08</id_numeroPlaca>
+        <eventos_numeroPlaca>
+            <eventosReglasID_numeroPlaca>H01</eventosReglasID_numeroPlaca>
+            <eventosReglasTotales_numeroPlaca>2</eventosReglasTotales_numeroPlaca>
+        </eventos_numeroPlaca>
+
+        <eventos_numeroPlaca>
+            <eventosReglasID_numeroPlaca>H01b</eventosReglasID_numeroPlaca>
+            <eventosReglasTotales_numeroPlaca>2</eventosReglasTotales_numeroPlaca>
+        </eventos_numeroPlaca>
+
+        <eventos_numeroPlaca>
+            <eventosReglasID_numeroPlaca>H01c</eventosReglasID_numeroPlaca>
+            <eventosReglasTotales_numeroPlaca>0</eventosReglasTotales_numeroPlaca>
+        </eventos_numeroPlaca>
+
+        <eventos_numeroPlaca>
+            <eventosReglasID_numeroPlaca>H07</eventosReglasID_numeroPlaca>
+            <eventosReglasTotales_numeroPlaca>1</eventosReglasTotales_numeroPlaca>
+        </eventos_numeroPlaca>
+    </numeroPlaca>
+    
+    <numeroSerie>
+        <id_numeroSerie>123456</id_numeroSerie>
+        <eventos_numeroSerie>
+            <eventosReglasID_numeroSerie>H01</eventosReglasID_numeroSerie>
+            <eventosReglasTotales_numeroSerie>1</eventosReglasTotales_numeroSerie>
+        </eventos_numeroSerie>
+
+        <eventos_numeroSerie>
+            <eventosReglasID_numeroSerie>H01b</eventosReglasID_numeroSerie>
+            <eventosReglasTotales_numeroSerie>2</eventosReglasTotales_numeroSerie>
+        </eventos_numeroSerie>
+
+        <eventos_numeroSerie>
+            <eventosReglasID_numeroSerie>H01c</eventosReglasID_numeroSerie>
+            <eventosReglasTotales_numeroSerie>2</eventosReglasTotales_numeroSerie>
+        </eventos_numeroSerie>
+
+        <eventos_numeroSerie>
+            <eventosReglasID_numeroSerie>H07</eventosReglasID_numeroSerie>
+            <eventosReglasTotales_numeroSerie>1</eventosReglasTotales_numeroSerie>
+        </eventos_numeroSerie>
+    </numeroSerie>
+    
+    <rfcContratante>
+        <id_rfcContratante>MM123</id_rfcContratante>
+        <eventos_rfcContratante>
+            <eventosReglasID_rfcContratante>H01</eventosReglasID_rfcContratante>
+            <eventosReglasTotales_rfcContratante>1</eventosReglasTotales_rfcContratante>
+        </eventos_rfcContratante>
+
+        <eventos_rfcContratante>
+            <eventosReglasID_rfcContratante>H01b</eventosReglasID_rfcContratante>
+            <eventosReglasTotales_rfcContratante>5</eventosReglasTotales_rfcContratante>
+        </eventos_rfcContratante>
+
+        <eventos_rfcContratante>
+            <eventosReglasID_rfcContratante>H01c</eventosReglasID_rfcContratante>
+            <eventosReglasTotales_rfcContratante>1</eventosReglasTotales_rfcContratante>
+        </eventos_rfcContratante>
+    </rfcContratante>
+    
+    <rfcConductor>
+        <id_rfcConductor>MM321</id_rfcConductor>
+        <eventos_rfcConductor>
+            <eventosReglasID_rfcConductor>H01</eventosReglasID_rfcConductor>
+            <eventosReglasTotales_rfcConductor>5</eventosReglasTotales_rfcConductor>
+        </eventos_rfcConductor>
+
+        <eventos_rfcConductor>
+            <eventosReglasID_rfcConductor>H01b</eventosReglasID_rfcConductor>
+            <eventosReglasTotales_rfcConductor>1</eventosReglasTotales_rfcConductor>
+        </eventos_rfcConductor>
+
+        <eventos_rfcConductor>
+            <eventosReglasID_rfcConductor>H01c</eventosReglasID_rfcConductor>
+            <eventosReglasTotales_rfcConductor>1</eventosReglasTotales_rfcConductor>
+        </eventos_rfcConductor>
+    </rfcConductor>
+</siniestro>
