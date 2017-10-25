@@ -46,13 +46,13 @@ public class Siniestros
     @XmlElement
     public String getTipoSiniestro() 
     {
-		return tipoSiniestro;
-	}
-	public void setTipoSiniestro(String tipoSiniestro) 
-	{
-		this.tipoSiniestro = tipoSiniestro;
-	}
-	@XmlElement(name = "numeroPlaca")
+        return tipoSiniestro;
+    }
+    public void setTipoSiniestro(String tipoSiniestro) 
+    {
+        this.tipoSiniestro = tipoSiniestro;
+    }
+    @XmlElement(name = "numeroPlaca")
     public List<NumeroPlaca> getNumeroPlaca()
     {
         return numeroPlaca;
